@@ -10,6 +10,6 @@ permissionBtn.addEventListener("click", () => {
   DeviceMotionEvent.requestPermission();
 });
 
-ondevicemotion((e) => {
-  console.log(e);
+window.addEventListener("devicemotion", (event) => {
+  console.log(event.acceleration);
 });
