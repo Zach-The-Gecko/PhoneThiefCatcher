@@ -19,19 +19,19 @@ const webcamElement = document.getElementById("webcam");
 const canvasElement = document.getElementById("canvas");
 const webcam = new Webcam(webcamElement, "user", canvasElement);
 
+webcam
+  .start()
+  .then((result) => {
+    console.log("Webcam Started!");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
 const motionDetected = () => {
   const alarmNoise = new Audio("./mixkit-alert-alarm-1005.mp3");
   alarmNoise.loop = true;
   alarmNoise.play();
-
-  webcam
-    .start()
-    .then((result) => {
-      console.log("Webcam Started!");
-    })
-    .catch((err) => {
-      console.log(err);
-    });
 
   const loop = () => {
     const picture = webcam.snap();
