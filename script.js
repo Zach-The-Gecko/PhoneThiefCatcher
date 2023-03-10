@@ -7,6 +7,9 @@ const setDisplay = (text) => {
 const permissionBtn = document.querySelector("#permission");
 
 permissionBtn.addEventListener("click", () => {
-  // Handle iOS 13+ devices.
   DeviceMotionEvent.requestPermission();
+});
+
+ondevicemotion((e) => {
+  console.log(e);
 });
